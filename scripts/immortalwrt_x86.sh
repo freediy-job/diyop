@@ -10,7 +10,8 @@ rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
 # 删除英文版netdata
 rm -rf feeds/luci/applications/luci-app-netdata
-
+# 删除低版本 v2ray-geodata
+rm -rf feeds/packages/net/v2ray-geodata
 ##### Git稀疏克隆
 # 参数1是分支名, 参数2是仓库地址, 参数3是子目录，同一个仓库下载多个文件夹直接在后面跟文件名或路径，空格分开
 function git_sparse_clone() {
@@ -43,6 +44,7 @@ git clone --depth=1 -b main https://github.com/sirpdboy/luci-app-parentcontrol p
 # 设备关机功能
 git clone --depth=1 https://github.com/sirpdboy/luci-app-poweroffdevice package/luci-app-poweroffdevice
 # 添加MosDNS
+git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone --depth=1 -b v5 https://github.com/sbwml/luci-app-mosdns package/mosdns
 # 添加adguardhome,bypass,timecontrol,control-timewol，管控过滤,访问限制
 git_sparse_clone main https://github.com/kenzok8/small-package luci-app-adguardhome luci-app-bypass luci-app-control-weburl luci-app-control-webrestriction
